@@ -14,13 +14,14 @@ for x in os.listdir(path):
     if x.endswith(('.jpg', '.png')) and x.startswith("IMG"):
 
         imageDir = path + pathSeparator + x
-        imageExtension = x[-4:] # this might not work with other file extensions but it works lol
+        imageExtension = x.split('.')[-1]
 
         print(imageDir)
 
         userInput = input("Input some tags for this image: ")
         userInputSplitSorted = sorted(userInput.split(" "))
+
         newFileName = '_'.join(userInputSplitSorted) + "_" + str(random.randint(1, 100))
-        newImageDir = path + pathSeparator + newFileName + imageExtension
+        newImageDir = path + pathSeparator + newFileName + "." + imageExtension
 
         os.rename(imageDir, newImageDir)
