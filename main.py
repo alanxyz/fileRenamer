@@ -11,7 +11,7 @@ pathSeparator = '//'
 print("This will sort your images which begin with IMG with tags alphabetically.\n")
 
 for x in os.listdir(path):
-    if x.endswith(('.jpg', '.png', '.jpeg')) and x.startswith("IMG"):
+    if x.endswith(('.jpg', '.png', '.jpeg', '.JPEG', '.PNG', '.JPG')) and x.startswith("IMG"):
 
         imageDir = path + pathSeparator + x
         imageExtension = x.split('.')[-1]
